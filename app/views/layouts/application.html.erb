@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Core Values & Me</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= stylesheet_link_tag "http://bootswatch.com/simplex/bootstrap.min.css" %>
+  <%= stylesheet_link_tag "application", "/lib/css/bootswatch/simplex/bootstrap.min.css", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -25,14 +24,19 @@
       <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="#about">Why Signup?</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <% unless user_signed_in? %>
+              <li><a href="#about">Why Signup?</a></li>
+
+              <li><a href="#contact">Contact</a></li>
+          <% end %>
         </ul>
         <ul class="nav pull-right">
-          <li><a href="#">Login</a></li>
-          <li></li>
+          <% if user_signed_in? %>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+          <% end %>
+
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -44,6 +48,7 @@
 </div>
 <!-- /.container -->
 <div class="container-fluid">
+  <%= render 'layouts/messages' %>
   <%= yield %>
 </div>
 

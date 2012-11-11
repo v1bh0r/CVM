@@ -20,6 +20,7 @@ body {
     padding-top: 50px;
     padding-bottom: 40px;
     color: #5a5a5a;
+    background-image: url("/assets/large_leather.png");
 }
 
 .navbar-inner {
@@ -32,4 +33,8 @@ body {
 
 .hero-unit {
     padding: 45px !important;
+}
+
+.text-align-left {
+    text-align: left;
 }
