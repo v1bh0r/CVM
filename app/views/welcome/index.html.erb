@@ -1,6 +1,10 @@
 <div class="hero-unit text-align-center">
   <h1>Core Values & Me</h1>
-  <a href="#" style="margin-top:15px" class="btn btn-primary btn-large">Signup for free</a>
+  <br/>
+  <%= form_tag new_user_registration_path, :class => 'inline-form home-signup-form', :method => :get do %>
+      <%= email_field :email, nil, :name => :email, :class=>'large-input', :placeholder => 'Your corporate email address.', :required => true, :size => '150' %>
+      <%= submit_tag 'Sign up for free', :class=>'btn btn-primary btn-large vertical-align-top' %>
+  <% end %>
 
   <h3>Engaging, Rewarding and Motivating your people through Core Values</h3>
   <iframe width="560" height="315" src="http://www.youtube.com/embed/IpDOFMOH2JM" frameborder="0" allowfullscreen></iframe>
@@ -58,5 +62,22 @@
 </div>
 
 <div id="contact" class="hero-unit text-align-center">
-  <h1>Contact</h1>
+  <h1>Contact Us</h1>
+  <br/>
+
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="span3"></div>
+      <div class='span6 contact-form text-align-center'>
+        <%= form_tag do %>
+            <%= text_area_tag :message, nil, :placeholder => 'Have some questions, ideas, suggestions or just say Hi! We would love to hear from YOU.', :required => true, :size => "150x10" %>
+            <br/>
+            <%= text_field_tag :from, nil, :placeholder => 'Your email address where we can reach back to you. (Optional)' %>
+            <br/>
+            <%= submit_tag 'Send', :class => 'btn btn-primary btn-large' %>
+        <% end %>
+      </div>
+      <div class="span3"></div>
+    </div>
+  </div>
 </div>

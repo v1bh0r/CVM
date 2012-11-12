@@ -6,7 +6,7 @@
 
       <div><%= f.label :email %>
 
-        <%= f.email_field :email, :required => true, :placeholder => 'Your corporate email', :autofocus => true %></div>
+        <%= f.email_field :email, :value => params[:email], :required => true, :placeholder => 'Your corporate email', :autofocus => true %></div>
 
       <div><%= f.label :password %>
         <%= f.password_field :password, :required => true %></div>
@@ -14,7 +14,7 @@
       <div><%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, :required => true %></div>
 
-      <div><%= f.submit "Sign up" %></div>
+      <div><%= f.submit "Sign up", :class=> 'btn btn-primary btn-large' %></div>
   <% end %>
 
   <%= render "devise/shared/links" %>

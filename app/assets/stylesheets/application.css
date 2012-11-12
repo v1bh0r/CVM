@@ -32,9 +32,39 @@ body {
 }
 
 .hero-unit {
-    padding: 45px !important;
+    padding: 25px !important;
 }
 
 .text-align-left {
     text-align: left;
+}
+
+.contact-form input[type='text'], .contact-form textarea {
+    width: 100%;
+    font-size: 20px !important;
+}
+
+.large-input {
+    font-size: 25px !important;
+    height: 34px !important;
+    vertical-align: middle !important;
+}
+
+.vertical-align-top {
+    vertical-align: top !important;
+}
+
+.home-signup-form input[type='email'] {
+    width: 400px;
+    border-radius: 7px !important;
+    -webkit-border-radius: 7px !important;
+    -moz-border-radius: 7px !important;
+}
+
+.home-signup-form input::-webkit-input-placeholder {
+    color: #d3d3d3;
+}
+
+.home-signup-form {
+    margin: 0 !important;
 }

@@ -3,7 +3,7 @@
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div><%= f.label :email %>
-        <%= f.email_field :email, :required => true, :placeholder => 'Your corporate email', :autofocus => true %></div>
+        <%= f.email_field :email, :value => params[:email], :required => true, :placeholder => 'Your corporate email', :autofocus => true %></div>
 
       <div><%= f.label :password %>
         <%= f.password_field :password, :required => true %></div>
@@ -12,7 +12,7 @@
           <div class="form-inline"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
       <% end -%>
 
-      <div><%= f.submit "Sign in" %></div>
+      <div><%= f.submit "Sign in", :class=> 'btn btn-primary btn-large' %></div>
   <% end %>
 
   <%= render "devise/shared/links" %>
